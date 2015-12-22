@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4>Vote successful!</h4>
+            </div>
+            <div class="col-sm-12 top-buffer">
+                Thanks for voting! You voted for my top pick from <span ng-bind="votingResults.vote.month"></span>. 
+
+                <div class="row">
+                    <div class="col-sm-12 right-control-container">
+                        <button class="btn btn-danger" ng-click="votingResults.undoVote()">
+                            <span class="glyphicon glyphicon-refresh"></span> Undo Vote
+                        </button>
+                    </div>
+                    <div class="col-sm-6">
+                        <img ng-src="{{votingResults.vote.image}}" ng-if="votingResults.vote.image" class="voting-item-img" alt="Picture of the Day">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+<div class="voting-app">
+    <div class="jumbotron">
+        <h1>365 Day Vote</h1> 
+        <p>Hey guys! So, I've narrow my favorite photos to the ones listed
+            below. Now I'd like you to vote on which one you like the
+            best!
+        </p> 
+    </div>
+    <div class="container-fluid">
+        <div class="panel panel-primary logged-in" ng-if="votingApp.user">
+            <div class="panel-heading">
+                The Candidates
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="right-control-container col-sm-12">
+                        <button class="btn btn-danger" ng-click="votingApp.logout();">
+                            Logout
+                        </button>  
+                    </div>
+                </div>
+                <div class="top-buffer" ng-if="!votingApp.hasVoted">
+                    <div class="flex-row">
+                        <div class="col-sm-6" ng-repeat="item in votingApp.votingItems | orderBy: 'monthOrder' track by $index">
+                            <voting-item  month="item.month"
+                                          comments="item.comments"
+                                          image="item.image"
+                                          flickr="image.flickr"
+                                          on-vote="votingApp.onVote(item);"
+                                          even="$even">
+                            </voting-item>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-buffer" ng-if="votingApp.hasVoted">
+                    <voting-results has-voted="votingApp.hasVoted"
+                                    items="votingApp.votingItems">
+                    </voting-results>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-primary logged-out" ng-if="!votingApp.user">
+            <div class="panel-heading">
+                Please Login
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>Please login</h3>
+                    </div>
+                    <div class="col-sm-12 text-center">
+                        <button class="btn btn-primary" ng-click="votingApp.loginWithFacebook();">
+                            Login with Facebook
+                        </button>
+                    </div>
+                    <div class="col-sm-12 text-center top-buffer">
+                        <button class="btn btn-danger" ng-click="votingApp.loginWithGoogle();">
+                            Login with Google+
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+/* 
+    Created on : Dec 21, 2015, 5:04:23 PM
+    Author     : Michael Kucinski
+*/
+html{
+    background-image: url(http://michaelkucinski.com/images/bg1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+body{
+    background: transparent;
+}
+.voting-app{
+
+}
+.voting-app > .jumbotron{
+
+    text-align: center;
+    text-shadow: 1px 1px 1px #000000;
+    background-color: rgba(0,0,0,.8);
+    margin-bottom: 3em;
+}
+.voting-app > .jumbotron > h1{
+    color: white;
+}
+.voting-app > .jumbotron > p{
+    color: orangered;
+    padding: .5em;
+}
+.voting-content-container{
+    background: white;
+    padding: 2em;
+}
+.voting-item-img{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.voting-items-comments{
+    margin-top: 1em;
+    font-size: 1.5em;
+}
+.top-buffer{
+    margin-top: 1em;
+}
+.right-control-container{
+    text-align: right;
+}
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex-row > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}

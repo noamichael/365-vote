@@ -1,0 +1,9 @@
+{
+  "firebase": "365-vote",
+  "public": "public_html",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
