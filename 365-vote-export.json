@@ -1,0 +1,92 @@
+{
+	"votingItems": {
+		"january": {
+			"comments": "This was my first well received shot, as well as my first truly difficult shot. I spilled milk everywhere. The feedback I got really helped me continue the challenge. ",
+			"title": "01/27/15",
+			"image": "https://farm9.staticflickr.com/8635/16759475631_0f689ef236_k.jpg",
+			"month": "January",
+			"flickr": "",
+			"monthOrder": 0
+		},
+		"february": {
+			"comments": "This was my first  attempt at serious photoshop.",
+			"title": "02/02/15",
+			"image": "https://farm9.staticflickr.com/8618/16553388867_97ac1ea058_k.jpg",
+			"month": "February",
+			"flickr": "",
+			"monthOrder": 1
+		},
+		"march": {
+			"comments": "I love you.",
+			"title": "03/26/15",
+			"image": "https://farm8.staticflickr.com/7643/16938219945_0d448e6696_k.jpg",
+			"month": "March",
+			"flickr": "",
+			"monthOrder": 2
+		},
+		"april": {
+			"comments": "I love you.",
+			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
+			"month": "April",
+			"flickr": "",
+			"monthOrder": 3
+		},
+		"may": {
+			"comments": "I love you.",
+			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
+			"month": "May",
+			"flickr": "",
+			"monthOrder": 4
+		},
+		"june": {
+			"comments": "I love you.",
+			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
+			"month": "June",
+			"flickr": "",
+			"monthOrder": 5
+		},
+		"july": {
+			"comments": "I love you.",
+			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
+			"month": "July",
+			"flickr": "",
+			"monthOrder": 6
+		},
+		"august": {
+			"comments": "I love you.",
+			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
+			"month": "August",
+			"flickr": "",
+			"monthOrder": 7
+		},
+		"september": {
+			"comments": "I love you.",
+			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
+			"month": "September",
+			"flickr": "",
+			"monthOrder": 8
+		},
+		"october": {
+			"comments": "I love you.",
+			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
+			"month": "October",
+			"flickr": "",
+			"monthOrder": 9
+		},
+		"november": {
+			"comments": "I love you.",
+			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
+			"month": "November",
+			"flickr": "",
+			"monthOrder": 10
+		},
+		"december": {
+			"comments": "This one gets a special place because of its subjects. Deborah and her son Emerson have firefighting in their blood. And when I saw a picture similar to this on reddit, I knew I has to recreate it",
+			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
+			"month": "December",
+			"flickr": "",
+			"monthOrder": 11
+		}
+
+	}
+}

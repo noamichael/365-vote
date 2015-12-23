@@ -1,28 +1,55 @@
 (function () {
-    angular.module("votingApp").service("VotingService", ["$cookies", "$firebaseArray",
-        function ($cookies, $firebaseArray) {
+    angular.module("votingApp").service("VotingService", ["$q", "$firebaseObject", "$firebaseArray",
+        function ($q, $firebaseObject, $firebaseArray) {
             var votingService = this,
-                    firebaseReference = new Firebase("https://365-vote.firebaseio.com/votingItems"),
-                    votingItems = $firebaseArray(firebaseReference),
-                    cookieName = "mk-365-vote";
-            this.hasVoted = function () {
-                return votingService.getVote() !== undefined;
+                    firebaseUrl = "https://365-vote.firebaseio.com/votingItems/",
+                    baseVotingItemsRef = new Firebase(firebaseUrl),
+                    votingItems = $firebaseArray(baseVotingItemsRef);
+            this.hasVoted = function (user) {
+                return getUserRef(user).then(function (userRef) {
+                    return userRef.votedFor !== undefined;
+                });
             };
-            this.undoVote = function () {
-                $cookies.put(cookieName, undefined);
+            this.undoVote = function (user) {
+                return unvote(user);
             };
-            this.voteFor = function (item) {
-                if (votingService.hasVoted()) {
-                    return;
-                }
-                $cookies.put(cookieName, JSON.stringify(item));
+            this.voteFor = function (item, user) {
+                return getUserRef(user).then(function (userRef) {
+                    if (userRef.votedFor) {
+                        unvote(user);
+                    }
+                    userRef.votedFor = item.month.toLowerCase();
+                    userRef.$save();
+                    return $firebaseObject(new Firebase(firebaseUrl + item.month.toLowerCase() + "/votes/" + user.uid)).$loaded();
+                }).then(function (votesRef) {
+                    votesRef.$value = true;
+                    return votesRef.$save();
+                });
+
             };
-            this.getVote = function () {
-                return $cookies.getObject(cookieName);
+            this.getVote = function (user) {
+                return getUserRef(user).then(function (userRef) {
+                    return $firebaseObject(new Firebase(firebaseUrl + userRef.votedFor)).$loaded();
+                });
             };
             this.getVotingItems = function () {
                 return votingItems.$loaded();
             };
+
+            function unvote(user) {
+                return getUserRef(user).then(function (userRef) {
+                    var votedFor = userRef.votedFor;
+                    userRef.votedFor = null;
+                    userRef.$save();
+                    return $firebaseObject(new Firebase(firebaseUrl + votedFor + "/votes/" + user.uid)).$remove();
+                });
+
+            }
+
+            function getUserRef(user) {
+                var firebaseUser = "https://365-vote.firebaseio.com/users/" + user.uid;
+                return $firebaseObject(new Firebase(firebaseUser)).$loaded();
+            }
 
         }
     ]);

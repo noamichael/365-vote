@@ -1,4 +1,4 @@
-<div class="voting-app">
+<div class="voting-app" ng-if="!votingApp.loading">
     <div class="jumbotron">
         <h1>365 Day Vote</h1> 
         <p>Hey guys! So, I've narrow my favorite photos to the ones listed
@@ -12,16 +12,22 @@
                 The Candidates
             </div>
             <div class="panel-body">
-                <div class="row">
-                    <div class="right-control-container col-sm-12">
-                        <button class="btn btn-danger" ng-click="votingApp.logout();">
-                            Logout
-                        </button>  
+                <div class="voting-user-summary">
+                    <img ng-src="{{votingApp.user.profileImageUrl}}"
+                         class="voting-user-icon" 
+                         ng-class="votingApp.user.provider"
+                         ng-if="votingApp.user.profileImageUrl">
+                    <div class="voting-user-name">
+                        <h4 ng-bind="votingApp.user.displayName"></h4>
+                        <p>Via <span ng-bind="votingApp.user.provider.toUpperCase();"></span></p>
                     </div>
+                    <button class="btn btn-danger" ng-click="votingApp.logout();">
+                        <span class="glyphicon glyphicon-off"></span> Logout
+                    </button> 
                 </div>
                 <div class="top-buffer" ng-if="!votingApp.hasVoted">
                     <div class="flex-row">
-                        <div class="col-sm-6" ng-repeat="item in votingApp.votingItems | orderBy: 'monthOrder' track by $index">
+                        <div class="col-sm-6" ng-repeat="item in votingApp.votingItems| orderBy: 'monthOrder' track by $index">
                             <voting-item  month="item.month"
                                           comments="item.comments"
                                           image="item.image"
@@ -34,6 +40,7 @@
                 </div>
                 <div class="top-buffer" ng-if="votingApp.hasVoted">
                     <voting-results has-voted="votingApp.hasVoted"
+                                    user="votingApp.user"
                                     items="votingApp.votingItems">
                     </voting-results>
                 </div>
