@@ -2,6 +2,9 @@
     Created on : Dec 21, 2015, 5:04:23 PM
     Author     : Michael Kucinski
 */
+html, body{
+    height: 100%;
+}
 html{
     background-image: url(http://michaelkucinski.com/images/bg1.jpg);
     background-repeat: no-repeat;
@@ -36,10 +39,20 @@ body{
     padding: 2em;
 }
 .voting-item-img{
-    width: 100%;
-    background-repeat: no-repeat;
+    /* width: 50%; */
+/*    background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
+    background-size: cover;*/
+}
+.voting-items{
+    display: flex;
+    flex-wrap: wrap;
+}
+.voting-items > voting-item{
+    width: 100%;
+}
+.voting-item-footer{
+    text-align: right;
 }
 .voting-items-comments{
     margin-top: 1em;
@@ -48,6 +61,7 @@ body{
 .voting-user-summary{
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 2em;
 }
 .voting-user-summary > *{
     margin-left: 1em;
@@ -57,6 +71,31 @@ body{
     width: auto;
     box-shadow: 1px 1px 8px black;
     display: inline;
+    margin-bottom: 1em;
+}
+.social-login-option{
+    font-size: 22em;
+    cursor: pointer;
+}
+.social-login-options{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+.social-login-option.facebook:hover,
+.social-login-option.google:hover{
+    color: orangered;
+}
+.social-login-option{
+    padding-left: .3em;
+    padding-right: .3em;
+}
+.social-login-option.facebook{
+    color: #0a68b4;
+}
+.social-login-option.google{
+    color: red;
 }
 .voting-user-icon.google{
     border-radius: 50%;
@@ -75,6 +114,9 @@ body{
 .right-control-container{
     text-align: right;
 }
+.voting-item-container{
+    padding: 1em;
+}
 .flex-row {
     display: flex;
     flex-wrap: wrap;
@@ -82,4 +124,13 @@ body{
 .flex-row > [class*='col-'] {
     display: flex;
     flex-direction: column;
+}
+@media only screen and (max-width : 768px) {
+    .voting-user-summary{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .voting-item-img{
+        width: 100%;
+    }
 }

@@ -50,11 +50,19 @@
             month: "=",
             even: "=",
             image: "=",
+            title: "=",
             flickr: "=",
             comments: "=",
             onVote: "&"
         },
-        controller: function () {}
+        controller: function () {
+            var votingItem = this;
+            this.goToFlickr = function () {
+                if (votingItem.flickr) {
+                    window.location.href = votingItem.flickr;
+                }
+            };
+        }
     });
     app.component("votingResults", {
         templateUrl: "app/voting-results/voting-results.html",

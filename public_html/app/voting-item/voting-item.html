@@ -1,13 +1,15 @@
-<div class="panel" ng-class="votingItem.even ? 'panel-primary' : 'panel-info'">
-    <div class="panel-heading">
-        {{votingItem.month}}
+<!--<div class="panel" ng-class="votingItem.even ? 'panel-primary' : 'panel-info'">-->
+<div class="voting-item-container">
+    <div>
+        <h3 ng-bind="votingItem.month"></h3>
+        <p ng-bind="votingItem.title"></p>
     </div>
-    <div class="panel-body">
+    <div class="voting-item-body">
         <img ng-src="{{votingItem.image}}" ng-if="votingItem.image" class="voting-item-img" alt="Picture of the Day">
         <p class="voting-items-comments" ng-bind="votingItem.comments"></p>
     </div>
-    <div class="panel-footer">
-        <button class="btn btn-info">
+    <div class="voting-item-footer">
+        <button class="btn btn-info" ng-click="votingItem.goToFlickr()">
             <span class="glyphicon glyphicon-zoom-in"></span> Flickr
         </button>
         <button class="btn btn-success" ng-click="votingItem.onVote();">

@@ -1,92 +1,99 @@
 {
 	"votingItems": {
-		"january": {
-			"comments": "This was my first well received shot, as well as my first truly difficult shot. I spilled milk everywhere. The feedback I got really helped me continue the challenge. ",
-			"title": "01/27/15",
-			"image": "https://farm9.staticflickr.com/8635/16759475631_0f689ef236_k.jpg",
-			"month": "January",
-			"flickr": "",
-			"monthOrder": 0
-		},
-		"february": {
-			"comments": "This was my first  attempt at serious photoshop.",
-			"title": "02/02/15",
-			"image": "https://farm9.staticflickr.com/8618/16553388867_97ac1ea058_k.jpg",
-			"month": "February",
-			"flickr": "",
-			"monthOrder": 1
-		},
-		"march": {
-			"comments": "I love you.",
-			"title": "03/26/15",
-			"image": "https://farm8.staticflickr.com/7643/16938219945_0d448e6696_k.jpg",
-			"month": "March",
-			"flickr": "",
-			"monthOrder": 2
-		},
 		"april": {
-			"comments": "I love you.",
-			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
+			"comments": "I was freezing when I took this, and just wanted to go home. I'm glad I didn't.",
+			"flickr": "https://www.flickr.com/photos/89564538@N00/16895416908/in/album-72157651183934746/",
+			"image": "https://farm8.staticflickr.com/7724/16895416908_895dba0b62_k.jpg",
 			"month": "April",
-			"flickr": "",
-			"monthOrder": 3
-		},
-		"may": {
-			"comments": "I love you.",
-			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
-			"month": "May",
-			"flickr": "",
-			"monthOrder": 4
-		},
-		"june": {
-			"comments": "I love you.",
-			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
-			"month": "June",
-			"flickr": "",
-			"monthOrder": 5
-		},
-		"july": {
-			"comments": "I love you.",
-			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
-			"month": "July",
-			"flickr": "",
-			"monthOrder": 6
+			"monthOrder": 3,
+			"title": "04/08/15"
 		},
 		"august": {
-			"comments": "I love you.",
-			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
+			"comments": "This one was so difficult to take because I had to balance on three reclining chairs whilst trying to trigger the remote. I laughed very hard at the end result though.",
+			"flickr": "https://www.flickr.com/photos/89564538@N00/20883037755/in/album-72157651183934746/",
+			"image": "https://farm1.staticflickr.com/637/20883037755_9ffa2a5c3e_k.jpg",
+			"title": "08/25/15",
 			"month": "August",
-			"flickr": "",
 			"monthOrder": 7
-		},
-		"september": {
-			"comments": "I love you.",
-			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
-			"month": "September",
-			"flickr": "",
-			"monthOrder": 8
-		},
-		"october": {
-			"comments": "I love you.",
-			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
-			"month": "October",
-			"flickr": "",
-			"monthOrder": 9
-		},
-		"november": {
-			"comments": "I love you.",
-			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
-			"month": "November",
-			"flickr": "",
-			"monthOrder": 10
 		},
 		"december": {
 			"comments": "This one gets a special place because of its subjects. Deborah and her son Emerson have firefighting in their blood. And when I saw a picture similar to this on reddit, I knew I has to recreate it",
+			"flickr": "",
 			"image": "https://farm6.staticflickr.com/5716/23127416883_f217fb7631_k.jpg",
 			"month": "December",
-			"flickr": "",
 			"monthOrder": 11
+		},
+		"february": {
+			"comments": "This was my first  attempt at serious photoshop.",
+			"flickr": "https://www.flickr.com/photos/89564538@N00/16553388867/",
+			"image": "https://farm9.staticflickr.com/8618/16553388867_97ac1ea058_k.jpg",
+			"month": "February",
+			"monthOrder": 1,
+			"title": "02/02/15"
+		},
+		"january": {
+			"comments": "This was my first well received shot, as well as my first truly difficult shot. I spilled milk everywhere. The feedback I got really helped me continue the challenge. ",
+			"flickr": "https://www.flickr.com/photos/89564538@N00/16759475631/in/album-72157651183934746/",
+			"image": "https://farm9.staticflickr.com/8635/16759475631_0f689ef236_k.jpg",
+			"month": "January",
+			"monthOrder": 0,
+			"title": "01/27/15"
+		},
+		"july": {
+			"comments": "I love this one so much because it expresses my sister's creativity so clearly.",
+			"flickr": "https://www.flickr.com/photos/89564538@N00/20126314105/in/album-72157651183934746/",
+			"image": "https://farm4.staticflickr.com/3688/20126314105_994880aab3_k.jpg",
+			"title": "07/29/15",
+			"month": "July",
+			"monthOrder": 6
+		},
+		"june": {
+			"comments": "I again found friendship.",
+			"flickr": "https://www.flickr.com/photos/89564538@N00/18512719276/in/album-72157651183934746/",
+			"image": "https://farm1.staticflickr.com/349/18512719276_78829905f9_k.jpg",
+			"month": "June",
+			"title": "06/06/15",
+			"monthOrder": 5
+		},
+		"march": {
+			"comments": "This shot perfectly illustrate the mood.",
+			"flickr": "https://www.flickr.com/photos/89564538@N00/16938219945/",
+			"image": "https://farm8.staticflickr.com/7643/16938219945_0d448e6696_k.jpg",
+			"month": "March",
+			"monthOrder": 2,
+			"title": "03/26/15"
+		},
+		"may": {
+			"comments": "I like to imagine that these caterpillars are great friends.",
+			"flickr": "https://www.flickr.com/photos/89564538@N00/17382492141/in/album-72157651183934746/",
+			"image": "https://farm6.staticflickr.com/5461/17382492141_5ee3c3cd0d_k.jpg",
+			"title": "05/05/15",
+			"month": "May",
+			"monthOrder": 4
+		},
+		"november": {
+			"comments": "What are we looking at?",
+			"flickr": "https://www.flickr.com/photos/89564538@N00/22866677341/in/album-72157651183934746/",
+			"title": "11/07/15",
+			"image": "https://farm6.staticflickr.com/5731/22866677341_ecbe2ac8a5_k.jpg",
+			"month": "November",
+			"monthOrder": 10
+		},
+		"october": {
+			"comments": "Although I don't usually like these kinds of pictures, I feel like this on sums up the gradient of the seasons.",
+			"flickr": "https://www.flickr.com/photos/89564538@N00/21326384713/in/album-72157651183934746/",
+			"title": "10/04/15",
+			"image": "https://farm6.staticflickr.com/5746/21326384713_3d181225d8_k.jpg",
+			"month": "October",
+			"monthOrder": 9
+		},
+		"september": {
+			"comments": "TODO",
+			"flickr": "https://www.flickr.com/photos/89564538@N00/21098218760/in/album-72157651183934746/",
+			"title": "09/09/15",
+			"image": "https://farm6.staticflickr.com/5772/21098218760_04b0a975b2_k.jpg",
+			"month": "September",
+			"monthOrder": 8
 		}
-
 	}
 }
