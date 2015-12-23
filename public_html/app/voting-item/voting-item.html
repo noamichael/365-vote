@@ -1,4 +1,3 @@
-<!--<div class="panel" ng-class="votingItem.even ? 'panel-primary' : 'panel-info'">-->
 <div class="voting-item-container">
     <div>
         <h3 ng-bind="votingItem.month"></h3>
@@ -12,7 +11,7 @@
         <button class="btn btn-info" ng-click="votingItem.goToFlickr()">
             <span class="glyphicon glyphicon-zoom-in"></span> Flickr
         </button>
-        <button class="btn btn-success" ng-click="votingItem.onVote();">
+        <button class="btn btn-success" ng-click="votingItem.onVote();" ng-if="!votingItem.preview">
             <span class="glyphicon glyphicon-check"></span> Vote!
         </button>
     </div>

@@ -26,17 +26,10 @@
                     </button> 
                 </div>
                 <div class="top-buffer" ng-if="!votingApp.hasVoted">
-                    <div class="voting-items">
-                            <voting-item ng-repeat="item in votingApp.votingItems| orderBy: 'monthOrder' track by $index"
-                                         month="item.month"
-                                         comments="item.comments"
-                                         image="item.image"
-                                         title="item.title"
-                                         flickr="item.flickr"
-                                         on-vote="votingApp.onVote(item);"
-                                         even="$even">
-                            </voting-item>
-                    </div>
+                    <voting-items on-vote="votingApp.onVote(votingItem);"
+                                  items="votingApp.votingItems"
+                                  preview="false">
+                    </voting-items>
                 </div>
                 <div class="top-buffer" ng-if="votingApp.hasVoted">
                     <voting-results has-voted="votingApp.hasVoted"

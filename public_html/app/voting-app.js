@@ -44,6 +44,16 @@
         templateUrl: "app/voting-app.html"
     });
 
+    app.component("votingItems", {
+        templateUrl: "app/voting-items/voting-items.html",
+        bindings: {
+            items: "=",
+            preview: "=",
+            onVote: "&"
+        },
+        controller: function () {}
+    });
+
     app.component("votingItem", {
         templateUrl: "app/voting-item/voting-item.html",
         bindings: {
@@ -51,6 +61,7 @@
             even: "=",
             image: "=",
             title: "=",
+            preview: "=",
             flickr: "=",
             comments: "=",
             onVote: "&"

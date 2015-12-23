@@ -1,0 +1,12 @@
+<div class="voting-items">
+    <voting-item ng-repeat="item in votingItems.items| orderBy: 'monthOrder' track by $index"
+                 month="item.month"
+                 comments="item.comments"
+                 image="item.image"
+                 title="item.title"
+                 flickr="item.flickr"
+                 preview="votingItems.preview"
+                 on-vote="votingItems.onVote({votingItem: item});"
+                 even="$even">
+    </voting-item>
+</div>
