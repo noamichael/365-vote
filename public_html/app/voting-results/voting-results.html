@@ -6,18 +6,38 @@
             </div>
             <div class="col-sm-12 top-buffer">
                 Thanks for voting! You voted for my top pick from <span ng-bind="votingResults.vote.month"></span>. 
-
-                <div class="row">
-                    <div class="col-sm-12 right-control-container">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 top-buffer">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        Your Pick
+                    </div>
+                    <div class="panel-body">
+                        <img ng-src="{{votingResults.vote.image}}" class="voting-result-img" ng-if="votingResults.vote.image" alt="Picture of the Day">
+                    </div>
+                    <div class="panel-footer">
                         <button class="btn btn-danger" ng-click="votingResults.undoVote()">
                             <span class="glyphicon glyphicon-refresh"></span> Undo Vote
                         </button>
                     </div>
-                    <div class="col-sm-6">
-                        <img ng-src="{{votingResults.vote.image}}" ng-if="votingResults.vote.image" class="voting-item-img" alt="Picture of the Day">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 top-buffer">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Results
+                    </div>
+                    <div class="panel-body">
+                        <canvas id="bar" class="chart chart-bar"
+                                chart-data="votingResults.getChart().data" 
+                                chart-labels="votingResults.getChart().labels">
+                        </canvas>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+

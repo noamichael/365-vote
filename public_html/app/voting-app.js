@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module("votingApp", ["ngCookies", "firebase"]);
+    var app = angular.module("votingApp", ["chart.js", "firebase"]);
     app.component("votingApp", {
         controller: ["$q", "VotingService", "LoginService", function ($q, VotingService, LoginService) {
                 var votingApp = this;
@@ -72,7 +72,11 @@
             hasVoted: "="
         },
         controller: ["VotingService", function (VotingService) {
-                var votingResults = this;
+                var votingResults = this,
+                        chartData = {
+                            labels: [],
+                            data: [[]]
+                        };
                 VotingService.getVote(votingResults.user).then(function (vote) {
                     votingResults.vote = vote;
                 });
@@ -80,6 +84,17 @@
                     VotingService.undoVote(votingResults.user).then(function () {
                         votingResults.hasVoted = false;
                     });
+                };
+                this.getChart = function () {
+                    chartData.labels.length = 0;
+                    chartData.data[0].length = 0;
+                    votingResults.items.forEach(function (votingItem) {
+                        var numberOfVotes = votingItem.votes ? Object.keys(votingItem.votes).length : 0,
+                                index = votingItem.monthOrder;
+                        chartData.labels[index] = votingItem.month;
+                        chartData.data[0][index] = numberOfVotes;
+                    });
+                    return chartData;
                 };
             }]
     });

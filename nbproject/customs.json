@@ -2,5 +2,9 @@
     "elements": {
         "voting-app": {}
     },
-    "attributes": {}
+    "attributes": {
+        "chart-data": {
+            "context": "canvas"
+        }
+    }
 }

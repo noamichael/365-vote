@@ -39,8 +39,8 @@ body{
     padding: 2em;
 }
 .voting-item-img{
-    /* width: 50%; */
-/*    background-repeat: no-repeat;
+    width: 50%;
+    /*    background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;*/
 }
@@ -74,7 +74,7 @@ body{
     margin-bottom: 1em;
 }
 .social-login-option{
-    font-size: 22em;
+    font-size: 21vw;
     cursor: pointer;
 }
 .social-login-options{
@@ -117,13 +117,8 @@ body{
 .voting-item-container{
     padding: 1em;
 }
-.flex-row {
-    display: flex;
-    flex-wrap: wrap;
-}
-.flex-row > [class*='col-'] {
-    display: flex;
-    flex-direction: column;
+.voting-result-img{
+    width: 100%;
 }
 @media only screen and (max-width : 768px) {
     .voting-user-summary{
