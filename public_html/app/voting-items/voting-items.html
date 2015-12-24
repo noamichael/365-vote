@@ -1,6 +1,7 @@
 <div class="voting-items">
     <voting-item ng-repeat="item in votingItems.items| orderBy: 'monthOrder' track by $index"
                  item="item"
+                 processing-vote="votingItems.processingVote"
                  preview="votingItems.preview"
                  on-vote="votingItems.onVote({votingItem: item});"
                  even="$even">

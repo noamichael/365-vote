@@ -26,8 +26,9 @@
                     });
                 });
                 this.onVote = function (item) {
-                    console.log("Voting for " + item.month);
+                    votingApp.processingVote = true;
                     VotingService.voteFor(item, votingApp.user).then(function () {
+                        votingApp.processingVote = false;
                         votingApp.hasVoted = true;
                     });
                 };
@@ -48,6 +49,7 @@
         templateUrl: "app/voting-items/voting-items.html",
         bindings: {
             items: "=",
+            processingVote: "=",
             preview: "=",
             onVote: "&"
         },
@@ -59,6 +61,7 @@
         bindings: {
             even: "=",
             item: "=",
+            processingVote: "=",
             preview: "=",
             onVote: "&"
         },
@@ -84,11 +87,21 @@
                             labels: [],
                             data: [[]]
                         };
+
+                votingResults.chartTypes = [
+                    {label: "Horizontal Bar", value: "HorizontalBar"},
+                    {label: "Vertical Bar", value: "Bar"},
+                    {label: "Pie", value: "Pie"},
+                    {label: "Doughnut", value: "Doughnut"}
+                ];
+                votingResults.chartType = "HorizontalBar";
                 VotingService.getVote(votingResults.user).then(function (vote) {
                     votingResults.vote = vote;
                 });
                 this.undoVote = function () {
+                    votingResults.processingUndo = true;
                     VotingService.undoVote(votingResults.user).then(function () {
+                        votingResults.processingUndo = false;
                         votingResults.hasVoted = false;
                     });
                 };
@@ -121,14 +134,27 @@
                     });
                 };
                 this.getChart = function () {
+                    var data;
                     chartData.labels.length = 0;
                     chartData.data[0].length = 0;
+                    if (votingResults.chartType === "Pie" || votingResults.chartType === "Doughnut") {
+                        data = chartData.data;
+                        data.length = 0;
+                    } else {
+                        chartData.data.length = 0;
+                        chartData.data[0] = [];
+                        data = chartData.data[0];
+                    }
                     votingResults.items.forEach(function (votingItem) {
                         var numberOfVotes = votingItem.votes ? Object.keys(votingItem.votes).length : 0,
                                 index = votingItem.monthOrder;
                         chartData.labels[index] = votingItem.month;
-                        chartData.data[0][index] = numberOfVotes;
+                        data[index] = numberOfVotes;
                     });
+                    if (votingResults.chartType === "HorizontalBar") {
+                        chartData.labels.reverse();
+                        data.reverse();
+                    }
                     return chartData;
                 };
                 function getVotingItemByMonthLocal(month) {

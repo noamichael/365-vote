@@ -2,55 +2,39 @@
     <div class="col-sm-12">
         <div class="row">
             <div class="col-sm-12">
-                <h4>Vote successful!</h4>
+                <h1 style="margin: 0px">Vote successful!</h1>
             </div>
             <div class="col-sm-12 top-buffer">
-                Thanks for voting! You voted for my top pick from <span ng-bind="votingResults.vote.month"></span>. 
+                <h4>
+                    Thanks for voting! You voted for my top pick from <span ng-bind="votingResults.vote.month"></span>. 
+                </h4>
+                <button class="btn btn-info" ng-disabled="votingResults.processingUndo" ng-click="votingResults.undoVote()">
+                    <span class="glyphicon glyphicon-refresh"></span> Undo Vote
+                </button>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-6 top-buffer">
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        Your Pick
-                    </div>
-                    <div class="panel-body">
-                        <img ng-src="{{votingResults.vote.image}}" class="voting-result-img" ng-if="votingResults.vote.image" alt="Picture of the Day">
-                    </div>
-                    <div class="panel-footer">
-                        <button class="btn btn-danger" ng-click="votingResults.undoVote()">
-                            <span class="glyphicon glyphicon-refresh"></span> Undo Vote
-                        </button>
-                    </div>
-                </div>
+                <h3>Your Pick</h3>
+                <img ng-src="{{votingResults.vote.image}}" class="voting-result-img" ng-if="votingResults.vote.image" alt="Picture of the Day">
             </div>
             <div class="col-sm-12 col-md-6 top-buffer">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        Results
-                    </div>
-                    <div class="panel-body">
-                        <canvas id="bar" class="chart chart-bar"
-                                chart-data="votingResults.getChart().data" 
-                                chart-labels="votingResults.getChart().labels"
-                                chart-click="votingResults.onChartClick"
-                                chart-colours="['#F7464A']">
-                        </canvas>
-                    </div>
-                </div>
+                <h3>Results</h3>
+                <p>Click on a bar to view that month's photo.</p>
+                <label>Chart Type</label>
+                <select ng-model="votingResults.chartType"
+                        ng-options="chartType.value as chartType.label for chartType in votingResults.chartTypes track by chartType.value">       
+                    <option value="">Select Type</option>
+                </select>
+                <canvas id="results-chart" class="chart-base chart"
+                        chart-type="votingResults.chartType"
+                        chart-data="votingResults.getChart().data" 
+                        chart-legend="true"
+                        chart-labels="votingResults.getChart().labels"
+                        chart-click="votingResults.onChartClick"
+                        chart-colours="['#F7464A']">
+                </canvas>
             </div>
-            <!--            <div class="col-sm-12">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    Other Candidates
-                                </div>
-                                <div class="panel-body">
-                                    <voting-items items="votingResults.items"
-                                                  preview="true">
-                                    </voting-items>
-                                </div>
-                            </div>
-                        </div>-->
         </div>
     </div>
 </div>

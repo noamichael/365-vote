@@ -11,7 +11,7 @@
         <button class="btn btn-info" ng-click="votingItem.goToFlickr()">
             <span class="glyphicon glyphicon-zoom-in"></span> Flickr
         </button>
-        <button class="btn btn-success" ng-click="votingItem.onVote();" ng-if="!votingItem.preview">
+        <button class="btn btn-success" ng-disabled="votingItem.processingVote" ng-click="votingItem.onVote();" ng-if="!votingItem.preview">
             <span class="glyphicon glyphicon-check"></span> Vote!
         </button>
     </div>

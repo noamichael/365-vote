@@ -27,6 +27,7 @@
                 </div>
                 <div class="top-buffer" ng-if="!votingApp.hasVoted">
                     <voting-items on-vote="votingApp.onVote(votingItem);"
+                                  processing-vote="votingApp.processingVote"
                                   items="votingApp.votingItems"
                                   preview="false">
                     </voting-items>

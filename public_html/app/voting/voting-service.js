@@ -18,6 +18,8 @@
                     if (userRef.votedFor) {
                         unvote(user);
                     }
+                    userRef.displayName = user.displayName;
+                    userRef.provider = user.provider;
                     userRef.votedFor = item.month.toLowerCase();
                     userRef.$save();
                     return $firebaseObject(new Firebase(firebaseUrl + item.month.toLowerCase() + "/votes/" + user.uid)).$loaded();
