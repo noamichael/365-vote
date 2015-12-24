@@ -22,7 +22,10 @@
                     userRef.$save();
                     return $firebaseObject(new Firebase(firebaseUrl + item.month.toLowerCase() + "/votes/" + user.uid)).$loaded();
                 }).then(function (votesRef) {
-                    votesRef.$value = true;
+                    votesRef.user = {
+                        displayName: user.displayName,
+                        provider: user.provider
+                    };
                     return votesRef.$save();
                 });
 

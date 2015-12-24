@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module("votingApp", ["chart.js", "firebase"]);
+    var app = angular.module("votingApp", ["chart.js", "firebase", "ui.bootstrap"]);
     app.component("votingApp", {
         controller: ["$q", "VotingService", "LoginService", function ($q, VotingService, LoginService) {
                 var votingApp = this;
@@ -57,13 +57,9 @@
     app.component("votingItem", {
         templateUrl: "app/voting-item/voting-item.html",
         bindings: {
-            month: "=",
             even: "=",
-            image: "=",
-            title: "=",
+            item: "=",
             preview: "=",
-            flickr: "=",
-            comments: "=",
             onVote: "&"
         },
         controller: function () {
@@ -82,7 +78,7 @@
             user: "=",
             hasVoted: "="
         },
-        controller: ["VotingService", function (VotingService) {
+        controller: ["VotingService", "$uibModal", function (VotingService, $uibModal) {
                 var votingResults = this,
                         chartData = {
                             labels: [],
@@ -96,6 +92,34 @@
                         votingResults.hasVoted = false;
                     });
                 };
+                this.onChartClick = function (points, evt) {
+                    if (!points || points.length < 1) {
+                        return;
+                    }
+                    var votingItem = getVotingItemByMonthLocal(points[0].label);
+                    if (!votingItem) {
+                        return;
+                    }
+                    $uibModal.open({
+                        animation: true,
+                        templateUrl: 'app/voting-results/voting-item-modal.html',
+                        controllerAs: "modalCtrl",
+                        backdrop: 'static',
+                        controller: [
+                            "$uibModalInstance", "votingItem", function ($uibModalInstance, votingItem) {
+                                this.votingItem = votingItem;
+                                this.close = function () {
+                                    $uibModalInstance.close();
+                                };
+                            }
+                        ],
+                        resolve: {
+                            votingItem: function () {
+                                return votingItem;
+                            }
+                        }
+                    });
+                };
                 this.getChart = function () {
                     chartData.labels.length = 0;
                     chartData.data[0].length = 0;
@@ -107,6 +131,16 @@
                     });
                     return chartData;
                 };
+                function getVotingItemByMonthLocal(month) {
+                    var currentItem;
+                    for (var i = 0; i < votingResults.items.length; i++) {
+                        currentItem = votingResults.items[i];
+                        if (currentItem.month === month) {
+                            return currentItem;
+                        }
+                    }
+                    return null;
+                }
             }]
     });
     function getName(authData) {

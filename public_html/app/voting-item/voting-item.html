@@ -1,11 +1,11 @@
 <div class="voting-item-container">
     <div>
-        <h3 ng-bind="votingItem.month"></h3>
-        <p ng-bind="votingItem.title"></p>
+        <h3 ng-bind="votingItem.item.month"></h3>
+        <p ng-bind="votingItem.item.title"></p>
     </div>
     <div class="voting-item-body">
-        <img ng-src="{{votingItem.image}}" ng-if="votingItem.image" class="voting-item-img" alt="Picture of the Day">
-        <p class="voting-items-comments" ng-bind="votingItem.comments"></p>
+        <img ng-src="{{votingItem.item.image}}" ng-if="votingItem.item.image" class="voting-item-img" alt="Picture of the Day">
+        <p class="voting-items-comments" ng-bind="votingItem.item.comments"></p>
     </div>
     <div class="voting-item-footer">
         <button class="btn btn-info" ng-click="votingItem.goToFlickr()">
