@@ -1,20 +1,21 @@
 {
+	"users": {},
 	"votingItems": {
 		"april": {
-			"comments": "I was freezing when I took this, and just wanted to go home. I'm glad I didn't.",
-			"flickr": "https://www.flickr.com/photos/89564538@N00/16895416908/in/album-72157651183934746/",
-			"image": "https://farm8.staticflickr.com/7724/16895416908_895dba0b62_k.jpg",
+			"comments": "This was taken right after a thunderstorm. The sun was setting and I was worried that I wouldn't have enough light to get the shot.",
+			"flickr": "https://www.flickr.com/photos/89564538@N00/17029327368/in/album-72157651183934746/",
+			"image": "https://farm9.staticflickr.com/8773/17029327368_db732df636_k.jpg",
 			"month": "April",
 			"monthOrder": 3,
-			"title": "04/08/15"
+			"title": "04/20/15"
 		},
 		"august": {
 			"comments": "This one was so difficult to take because I had to balance on three reclining chairs whilst trying to trigger the remote. I laughed very hard at the end result though.",
 			"flickr": "https://www.flickr.com/photos/89564538@N00/20883037755/in/album-72157651183934746/",
 			"image": "https://farm1.staticflickr.com/637/20883037755_9ffa2a5c3e_k.jpg",
-			"title": "08/25/15",
 			"month": "August",
-			"monthOrder": 7
+			"monthOrder": 7,
+			"title": "08/25/15"
 		},
 		"december": {
 			"comments": "This one gets a special place because of its subjects. Deborah and her son Emerson have firefighting in their blood. And when I saw a picture similar to this on reddit, I knew I has to recreate it",
@@ -43,57 +44,57 @@
 			"comments": "I love this one so much because it expresses my sister's creativity so clearly.",
 			"flickr": "https://www.flickr.com/photos/89564538@N00/20126314105/in/album-72157651183934746/",
 			"image": "https://farm4.staticflickr.com/3688/20126314105_994880aab3_k.jpg",
-			"title": "07/29/15",
 			"month": "July",
-			"monthOrder": 6
+			"monthOrder": 6,
+			"title": "07/29/15"
 		},
 		"june": {
 			"comments": "I again found friendship.",
 			"flickr": "https://www.flickr.com/photos/89564538@N00/18512719276/in/album-72157651183934746/",
 			"image": "https://farm1.staticflickr.com/349/18512719276_78829905f9_k.jpg",
 			"month": "June",
-			"title": "06/06/15",
-			"monthOrder": 5
+			"monthOrder": 5,
+			"title": "06/06/15"
 		},
 		"march": {
-			"comments": "This shot perfectly illustrate the mood.",
+			"comments": "I feel like this shot was generally underrated.",
 			"flickr": "https://www.flickr.com/photos/89564538@N00/16938219945/",
-			"image": "https://farm8.staticflickr.com/7643/16938219945_0d448e6696_k.jpg",
+			"image": "https://farm9.staticflickr.com/8735/16731161220_cc47cdfeb4_k.jpg",
 			"month": "March",
 			"monthOrder": 2,
-			"title": "03/26/15"
+			"title": "03/24/15"
 		},
 		"may": {
 			"comments": "I like to imagine that these caterpillars are great friends.",
 			"flickr": "https://www.flickr.com/photos/89564538@N00/17382492141/in/album-72157651183934746/",
 			"image": "https://farm6.staticflickr.com/5461/17382492141_5ee3c3cd0d_k.jpg",
-			"title": "05/05/15",
 			"month": "May",
-			"monthOrder": 4
+			"monthOrder": 4,
+			"title": "05/05/15"
 		},
 		"november": {
 			"comments": "What are we looking at?",
 			"flickr": "https://www.flickr.com/photos/89564538@N00/22866677341/in/album-72157651183934746/",
-			"title": "11/07/15",
 			"image": "https://farm6.staticflickr.com/5731/22866677341_ecbe2ac8a5_k.jpg",
 			"month": "November",
-			"monthOrder": 10
+			"monthOrder": 10,
+			"title": "11/07/15"
 		},
 		"october": {
 			"comments": "Although I don't usually like these kinds of pictures, I feel like this on sums up the gradient of the seasons.",
 			"flickr": "https://www.flickr.com/photos/89564538@N00/21326384713/in/album-72157651183934746/",
-			"title": "10/04/15",
 			"image": "https://farm6.staticflickr.com/5746/21326384713_3d181225d8_k.jpg",
 			"month": "October",
-			"monthOrder": 9
+			"monthOrder": 9,
+			"title": "10/04/15"
 		},
 		"september": {
-			"comments": "TODO",
-			"flickr": "https://www.flickr.com/photos/89564538@N00/21098218760/in/album-72157651183934746/",
-			"title": "09/09/15",
-			"image": "https://farm6.staticflickr.com/5772/21098218760_04b0a975b2_k.jpg",
+			"comments": "I've always liked collaborating with talented people. ",
+			"flickr": "https://www.flickr.com/photos/89564538@N00/21228631004",
+			"image": "https://farm6.staticflickr.com/5687/21228631004_1803c853fc_k.jpg",
 			"month": "September",
-			"monthOrder": 8
+			"monthOrder": 8,
+			"title": "09/30/15"
 		}
 	}
 }

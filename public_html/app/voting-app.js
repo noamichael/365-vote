@@ -98,6 +98,11 @@
                 VotingService.getVote(votingResults.user).then(function (vote) {
                     votingResults.vote = vote;
                 });
+
+                buildChart();
+                votingResults.items.$watch(buildChart);
+                votingResults.buildChart = buildChart;
+
                 this.undoVote = function () {
                     votingResults.processingUndo = true;
                     VotingService.undoVote(votingResults.user).then(function () {
@@ -134,6 +139,19 @@
                     });
                 };
                 this.getChart = function () {
+                    return chartData;
+                };
+                function getVotingItemByMonthLocal(month) {
+                    var currentItem;
+                    for (var i = 0; i < votingResults.items.length; i++) {
+                        currentItem = votingResults.items[i];
+                        if (currentItem.month === month) {
+                            return currentItem;
+                        }
+                    }
+                    return null;
+                }
+                function buildChart() {
                     var data;
                     chartData.labels.length = 0;
                     chartData.data[0].length = 0;
@@ -155,17 +173,6 @@
                         chartData.labels.reverse();
                         data.reverse();
                     }
-                    return chartData;
-                };
-                function getVotingItemByMonthLocal(month) {
-                    var currentItem;
-                    for (var i = 0; i < votingResults.items.length; i++) {
-                        currentItem = votingResults.items[i];
-                        if (currentItem.month === month) {
-                            return currentItem;
-                        }
-                    }
-                    return null;
                 }
             }]
     });

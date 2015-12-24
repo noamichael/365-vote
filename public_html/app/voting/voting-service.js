@@ -1,7 +1,7 @@
 (function () {
     angular.module("votingApp").service("VotingService", ["$q", "$firebaseObject", "$firebaseArray",
         function ($q, $firebaseObject, $firebaseArray) {
-            var votingService = this,
+            var cache = {},
                     firebaseUrl = "https://365-vote.firebaseio.com/votingItems/",
                     baseVotingItemsRef = new Firebase(firebaseUrl),
                     votingItems = $firebaseArray(baseVotingItemsRef);
@@ -28,13 +28,21 @@
                         displayName: user.displayName,
                         provider: user.provider
                     };
-                    return votesRef.$save();
+                    votesRef.$save();
+                    votesRef.$destroy();
+                    return $q(function (r) {
+                        r();
+                    });
                 });
 
             };
             this.getVote = function (user) {
                 return getUserRef(user).then(function (userRef) {
-                    return $firebaseObject(new Firebase(firebaseUrl + userRef.votedFor)).$loaded();
+                    var voteKey = firebaseUrl + userRef.votedFor;
+                    if (!cache[voteKey]) {
+                        cache[voteKey] = $firebaseObject(new Firebase(firebaseUrl + userRef.votedFor));
+                    }
+                    return cache[voteKey].$loaded();
                 });
             };
             this.getVotingItems = function () {
@@ -46,14 +54,20 @@
                     var votedFor = userRef.votedFor;
                     userRef.votedFor = null;
                     userRef.$save();
-                    return $firebaseObject(new Firebase(firebaseUrl + votedFor + "/votes/" + user.uid)).$remove();
+                    var oldVoteRef = $firebaseObject(new Firebase(firebaseUrl + votedFor + "/votes/" + user.uid));
+                    oldVoteRef.$remove();
+                    oldVoteRef.$destroy();
+                    return oldVoteRef;
                 });
 
             }
 
             function getUserRef(user) {
-                var firebaseUser = "https://365-vote.firebaseio.com/users/" + user.uid;
-                return $firebaseObject(new Firebase(firebaseUser)).$loaded();
+                if (!cache.userRef) {
+                    var url = "https://365-vote.firebaseio.com/users/" + user.uid;
+                    cache.userRef = $firebaseObject(new Firebase(url));
+                }
+                return cache.userRef.$loaded();
             }
 
         }

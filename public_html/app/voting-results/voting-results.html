@@ -20,9 +20,10 @@
             </div>
             <div class="col-sm-12 col-md-6 top-buffer">
                 <h3>Results</h3>
-                <p>Click on a bar to view that month's photo.</p>
+                <p>Click on a section of the chart to view that month's photo.</p>
                 <label>Chart Type</label>
                 <select ng-model="votingResults.chartType"
+                        ng-change="votingResults.buildChart()"
                         ng-options="chartType.value as chartType.label for chartType in votingResults.chartTypes track by chartType.value">       
                     <option value="">Select Type</option>
                 </select>
