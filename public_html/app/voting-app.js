@@ -43,6 +43,8 @@
                 };
                 this.logout = function () {
                     LoginService.$unauth();
+                    votingApp.loading = true;
+                    location.reload();
                 };
             }],
         templateUrl: "app/voting-app.html"
