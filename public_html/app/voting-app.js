@@ -38,6 +38,9 @@
                 this.loginWithGoogle = function () {
                     LoginService.$authWithOAuthPopup("google");
                 };
+                this.loginWithTwitter = function () {
+                    LoginService.$authWithOAuthPopup("twitter");
+                };
                 this.logout = function () {
                     LoginService.$unauth();
                 };
@@ -194,6 +197,9 @@
                 return authData.google.profileImageURL;
             case "facebook":
                 return authData.facebook.profileImageURL;
+            case "twitter":
+                return authData.twitter.profileImageURL;
+
         }
     }
 })();
