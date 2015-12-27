@@ -48,6 +48,9 @@
             this.getVotingItems = function () {
                 return votingItems.$loaded();
             };
+            this.clearUserCache = function(){
+                cache.userRef = undefined;
+            };
 
             function unvote(user) {
                 return getUserRef(user).then(function (userRef) {
